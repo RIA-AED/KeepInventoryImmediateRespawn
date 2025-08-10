@@ -1,0 +1,6 @@
+name: KeepInventoryImmediateRespawn
+version: '1.0-SNAPSHOT'
+main: ink.magma.keepInventoryImmediateRespawn.KeepInventoryImmediateRespawn
+api-version: '1.21'
+authors: [ Magma ]
+description: If you dead but inventory be kept, this plugin will make you respawn immediately.
