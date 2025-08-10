@@ -21,7 +21,7 @@ public final class KeepInventoryImmediateRespawn extends JavaPlugin implements L
         // Plugin shutdown logic
     }
 
-    @EventHandler(priority = EventPriority.LOW)
+    @EventHandler(priority = EventPriority.MONITOR)
     public void onPlayerDeath(PlayerDeathEvent event) {
         boolean isKeepInv = event.getKeepInventory();
         if (!isKeepInv) return;
@@ -30,8 +30,6 @@ public final class KeepInventoryImmediateRespawn extends JavaPlugin implements L
         if (isWorldImmediateRespawn) return;
 
         // 1 tick
-        Bukkit.getScheduler().runTask(this, () -> {
-            event.getEntity().spigot().respawn();
-        });
+        Bukkit.getScheduler().runTask(this, () -> event.getEntity().spigot().respawn());
     }
 }
